@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>ProjectX — Chi Siamo</title>
+  <meta name="description" content="Scopri la visione, i valori e il processo creativo di ProjectX, l’atelier digitale che trasforma volti e icone in busti artistici effetto marmo.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon/dist/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon/dist/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="favicon/dist/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --bg:#000;
+      --fg:#f5f5f5;
+      --muted:#c5c1b6;
+      --gold:#d4af37;
+      --gold1:#F9E79F;
+      --gold2:#D4AF37;
+      --gold-soft:rgba(212,175,55,.35);
+      --panel:rgba(0,0,0,.78);
+      --panel-strong:rgba(0,0,0,.88);
+      --border-soft:rgba(255,255,255,0.07);
+      --shadow-deep:0 28px 60px rgba(0,0,0,.85);
+      --link-gold:#D4AF37;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:Inter, system-ui, sans-serif;
+      background:#000 url("assets/background-marble.png") center/cover fixed no-repeat;
+      color:var(--fg);
+      -webkit-font-smoothing:antialiased;
+      padding-bottom:40px;
+    }
+
+    a{text-decoration:none;color:inherit;}
+
+    /* =============== HEADER IDENTICO ALL’INDEX V6 =============== */
+
+    .header{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:100;
+      padding:10px 0 0;
+      opacity:1; /* visibile subito */
+      pointer-events:auto;
+      transform:none;
+      background:transparent;
+    }
+
+    .header-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 28px;
+      border-radius:26px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:32px;
+      background:rgba(0,0,0,0.78);
+      border:1px solid rgba(255,255,255,0.05);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,.85),
+        0 0 30px rgba(0,0,0,.8);
+      backdrop-filter:blur(14px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand-logo-header{
+      width:72px;
+      height:auto;
+      border-radius:50%;
+      box-shadow:0 0 10px rgba(0,0,0,.9);
+    }
+
+    .brand-title{
+      font-family:"Playfair Display", serif;
+      font-size:1.45rem;
+      letter-spacing:.06em;
+      text-shadow:0 0 9px rgba(0,0,0,.9);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-family:"Playfair Display", serif;
+      font-size:.98rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .nav a{
+      position:relative;
+      text-decoration:none;
+      color:var(--link-gold);
+      padding:4px 0;
+      opacity:.88;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+
+    .nav a:hover{
+      opacity:1;
+      transform:translateY(-1px);
+    }
+
+    .nav a::after{
+      content:"";
+      position:absolute;
+      left:0;bottom:-3px;
+      width:0;height:2px;
+      background:linear-gradient(90deg,var(--gold1),var(--gold2));
+      transition:width .22s ease;
+      opacity:.9;
+    }
+
+    .nav a:hover::after{
+      width:100%;
+    }
+
+    /* ================= DROPDOWN INFO ================= */
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-trigger {
+      cursor: pointer;
+      color: var(--link-gold);
+      opacity: .88;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-family: "Playfair Display", serif;
+    }
+
+    .dropdown-trigger:hover {
+      opacity: 1;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: rgba(0,0,0,0.85);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 12px 0;
+      min-width: 160px;
+      display: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 18px;
+      color: var(--link-gold);
+      text-decoration: none;
+      font-size: .9rem;
+      letter-spacing: .05em;
+      font-family: "Playfair Display", serif;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.04);
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+
+    /* ================= PAGE ================= */
+
+    .shell{
+      max-width:1100px;
+      margin:130px auto 0; /* spazio sotto l’header */
+      padding:0 20px;
+    }
+
+    .card{
+      background:radial-gradient(circle at 0% 0%,rgba(249,231,159,.10),rgba(0,0,0,.92));
+      border-radius:30px;
+      padding:50px 50px 46px;
+      border:1px solid rgba(255,255,255,.05);
+      box-shadow:var(--shadow-deep);
+      animation:fadeIn .6s ease forwards;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(16px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    h1{
+      font-family:"Playfair Display", serif;
+      text-align:center;
+      font-size:40px;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+      text-transform:uppercase;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:26px;
+    }
+
+    .divider{
+      width:120px;
+      height:1px;
+      margin:0 auto 34px;
+      background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);
+    }
+
+    .cols{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:36px;
+      margin-bottom:32px;
+    }
+
+    @media(max-width:880px){
+      .cols{grid-template-columns:1fr;}
+    }
+
+    .lead{
+      font-size:18px;
+      line-height:1.75;
+      color:#f7f4e9;
+    }
+
+    .muted{
+      margin-top:12px;
+      font-size:14px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .pill-list{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .pill{
+      padding:7px 14px;
+      border-radius:999px;
+      background:rgba(0,0,0,.68);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .timeline{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(0,0,0,.72);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .timeline-label{
+      font-family:"Playfair Display", serif;
+      color:var(--gold);
+      font-size:15px;
+      margin-bottom:4px;
+    }
+
+    .quote-block{
+      margin-top:12px;
+      padding:18px 18px;
+      border-radius:16px;
+      background:rgba(0,0,0,.7);
+      border:1px solid rgba(255,255,255,.06);
+      font-style:italic;
+      color:#e9e3d6;
+      font-size:14px;
+    }
+
+    .quote-author{
+      text-align:right;
+      margin-top:8px;
+      font-size:13px;
+      color:var(--gold);
+      font-style:normal;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:40px;
+      font-size:13px;
+      color:var(--muted);
+    }
+  
+    /* ========== NAV MOBILE V8.2 ========== */
+    .nav-toggle{
+      display:none;
+    }
+    .nav-toggle-label{
+      display:none;
+    }
+
+    @media (max-width: 768px){
+      .header-inner{
+        padding:10px 16px;
+        gap:16px;
+      }
+
+      .nav-toggle{
+        display:block;
+        position:absolute;
+        width:1px;
+        height:1px;
+        opacity:0;
+        pointer-events:none;
+      }
+
+      .nav-toggle-label{
+        display:flex;
+        margin-left:auto;
+        cursor:pointer;
+        width:32px;
+        height:24px;
+        align-items:center;
+        justify-content:center;
+        position:relative;
+        z-index:250;
+      }
+
+      .nav-toggle-label span,
+      .nav-toggle-label span::before,
+      .nav-toggle-label span::after{
+        content:"";
+        position:absolute;
+        width:22px;
+        height:2px;
+        background:var(--fg);
+        border-radius:2px;
+        transition:transform .2s ease, opacity .2s ease, top .2s ease, bottom .2s ease;
+      }
+      .nav-toggle-label span::before{ top:-6px; }
+      .nav-toggle-label span::after{ bottom:-6px; }
+
+      .nav{
+        position:fixed;
+        top:0;
+        right:-260px;
+        width:260px;
+        height:100vh;
+        background:rgba(0,0,0,0.96);
+        flex-direction:column;
+        align-items:flex-start;
+        padding:80px 24px 24px;
+        gap:18px;
+        box-shadow:-18px 0 35px rgba(0,0,0,0.9);
+        transition:right .25s ease-out;
+        z-index:200;
+      }
+
+      .nav a,
+      .dropdown-trigger{
+        font-size:.9rem;
+        letter-spacing:.08em;
+      }
+
+      .dropdown{
+        width:100%;
+      }
+
+      .dropdown-menu{
+        position:static;
+        margin-top:6px;
+        background:transparent;
+        border:none;
+        box-shadow:none;
+        padding:0;
+      }
+
+      .dropdown-menu a{
+        padding:6px 0;
+      }
+
+      .dropdown:hover .dropdown-menu{
+        display:block;
+      }
+
+      .nav-toggle:checked ~ .nav{
+        right:0;
+      }
+
+      /* blocco zoom visivo aggiuntivo per body su mobile */
+      body{
+        overscroll-behavior-y:contain;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="ProjectX" class="brand-logo-header">
+      <div class="brand-title">ProjectX</div>
+    </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Apri il menu">
+        <span></span>
+      </label>
+
+    <nav class="nav">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#galleria">Galleria</a>
+      <a href="index.html#processo">Processo</a>
+      <a href="index.html#prezzi">Prezzi</a>
+      <a href="index.html#contatti">Contatti</a>
+
+      <div class="dropdown">
+        <a class="dropdown-trigger">Info ▾</a>
+        <div class="dropdown-menu">
+          <a href="chi-siamo.html">Chi Siamo</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="termini.html">Termini</a>
+          <a href="social.html">Social</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <section class="card">
+      <h1>Chi Siamo</h1>
+      <p class="subtitle">Un atelier digitale che unisce arte classica, tecnologia e cura artigianale.</p>
+      <div class="divider"></div>
+
+      <div class="cols">
+        <div>
+          <p class="lead">
+            ProjectX nasce dal desiderio di creare busti che non siano semplici oggetti, ma
+            piccole opere da esporre e vivere. Ogni scultura è modellata e rifinita con cura,
+            combinando l’eleganza dell’estetica classica con la precisione della stampa 3D
+            ad altissima definizione.
+          </p>
+          <p class="muted">
+            Ogni pezzo viene lavorato personalmente: studio, modellazione, stampa,
+            pulizia, rifinitura e controllo finale. Nessuna produzione in serie: solo opere
+            create con intenzione, pazienza e rispetto per la storia che racchiudono.
+          </p>
+
+          <ul class="pill-list">
+            <li class="pill">Resina 8K effetto marmo</li>
+            <li class="pill">Finiture a mano</li>
+            <li class="pill">Pezzi unici</li>
+            <li class="pill">Made in Italy</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-label">Visione</div>
+              <div class="muted">
+                Dare al ritratto una nuova vita, trasformando volti, icone e ricordi in sculture intime e senza tempo.
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-label">Metodo</div>
+              <div class="muted">
+                Modellazione digitale accurata, stampa 8K, rifiniture manuali e packaging curato per una presentazione impeccabile.
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-label">Stile</div>
+              <div class="muted">
+                Ispirazione classica greco-romana ripensata con linee pulite e dettagli moderni.
+              </div>
+            </div>
+          </div>
+
+          <div class="quote-block">
+            «Ogni busto celebra un volto, un legame, un ricordo. È una forma di memoria che vive nello spazio.»
+            <div class="quote-author">Ignis — Founder / Artist</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © ProjectX — Made in Italy · Ignis — Founder / Artist
+    </footer>
+  </div>
+</main>
+
+</body>
+</html>
