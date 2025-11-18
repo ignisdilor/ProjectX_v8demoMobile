@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>ProjectX — Domande Frequenti</title>
+  <meta name="description" content="Domande frequenti su busti personalizzati, tempi di produzione, materiali, anteprime e spedizioni ProjectX.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon/dist/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon/dist/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="favicon/dist/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --bg:#000;
+      --fg:#f5f5f5;
+      --muted:#c5c1b6;
+      --gold:#d4af37;
+      --gold1:#F9E79F;
+      --gold2:#D4AF37;
+      --gold-soft:rgba(212,175,55,.35);
+      --border-soft:rgba(255,255,255,0.07);
+      --shadow-deep:0 12px 26px rgba(0,0,0,.85);
+      --link-gold:#D4AF37;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:Inter, system-ui, sans-serif;
+      background:#000 url("assets/background-marble.png") center/cover  no-repeat;
+      color:var(--fg);
+      -webkit-font-smoothing:antialiased;
+      padding-bottom:40px;
+    }
+
+    a{text-decoration:none;color:inherit;}
+
+    /* ===== HEADER IDENTICO ALL’INDEX V6 ===== */
+
+    .header{
+      position:;
+      top:0; left:0; right:0;
+      z-index:100;
+      padding:10px 0 0;
+      opacity:1;
+      pointer-events:auto;
+      transform:none;
+      background:transparent;
+    }
+
+    .header-inner{
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px 28px;
+      border-radius:26px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:32px;
+      background:rgba(0,0,0,0.78);
+      border:1px solid rgba(255,255,255,0.05);
+      box-shadow:
+        0 10px 20px rgba(0,0,0,.85),
+        0 0 14px rgba(0,0,0,.8);
+      backdrop-filter:blur(6px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand-logo-header{
+      width:72px;
+      height:auto;
+      border-radius:50%;
+      box-shadow:0 0 10px rgba(0,0,0,.9);
+    }
+
+    .brand-title{
+      font-family:"Playfair Display", serif;
+      font-size:1.45rem;
+      letter-spacing:.06em;
+      text-shadow:0 0 9px rgba(0,0,0,.9);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-family:"Playfair Display", serif;
+      font-size:.98rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .nav a{
+      position:relative;
+      color:var(--link-gold);
+      padding:4px 0;
+      opacity:.88;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+
+    .nav a:hover{
+      opacity:1;
+      transform:translateY(-1px);
+    }
+
+    .nav a::after{
+      content:"";
+      position:absolute;
+      left:0; bottom:-3px;
+      width:0; height:2px;
+      background:linear-gradient(90deg,var(--gold1),var(--gold2));
+      transition:width .22s ease;
+      opacity:.9;
+    }
+
+    .nav a:hover::after{
+      width:100%;
+    }
+
+    /* ===== DROPDOWN INFO ===== */
+
+    .dropdown{position:relative;}
+
+    .dropdown-trigger{
+      cursor:pointer;
+      color:var(--link-gold);
+      opacity:.88;
+      font-family:"Playfair Display",serif;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .dropdown-trigger:hover{opacity:1;}
+
+    .dropdown-menu{
+      position:absolute;
+      top:28px; left:0;
+      background:rgba(0,0,0,0.85);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;
+      padding:12px 0;
+      min-width:160px;
+      display:none;
+      box-shadow:0 8px 18px rgba(0,0,0,0.6);
+      backdrop-filter:blur(5px);
+    }
+
+    .dropdown-menu a{
+      display:block;
+      padding:10px 18px;
+      color:var(--link-gold);
+      font-size:.9rem;
+      font-family:"Playfair Display",serif;
+      letter-spacing:.05em;
+      white-space:nowrap;
+    }
+
+    .dropdown-menu a:hover{
+      background:rgba(255,255,255,0.04);
+    }
+
+    .dropdown:hover .dropdown-menu{
+      display:block;
+    }
+
+
+    /* ===== PAGE CONTENT ===== */
+
+    .shell{
+      max-width:900px;
+      margin:130px auto 0;
+      padding:0 20px;
+    }
+
+    .card{
+      background:radial-gradient(circle at 0% 0%,rgba(249,231,159,.10),rgba(0,0,0,.92));
+      border-radius:30px;
+      padding:46px 36px 40px;
+      border:1px solid rgba(255,255,255,.05);
+      box-shadow:var(--shadow-deep);
+      animation:fadeIn .6s ease forwards;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(18px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:38px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      text-align:center;
+      margin-bottom:6px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:26px;
+    }
+
+    .divider{
+      width:120px;
+      height:1px;
+      margin:0 auto 28px;
+      background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);
+    }
+
+    .faq-list{
+      display:grid;
+      gap:16px;
+    }
+
+    .faq-item{
+      padding:18px 18px 14px;
+      background:rgba(0,0,0,.72);
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .faq-q{
+      font-family:"Playfair Display",serif;
+      font-size:17px;
+      color:#f6f1e4;
+      margin-bottom:6px;
+    }
+
+    .faq-a{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:40px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="ProjectX" class="brand-logo-header">
+      <div class="brand-title">ProjectX</div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#galleria">Galleria</a>
+      <a href="index.html#processo">Processo</a>
+      <a href="index.html#prezzi">Prezzi</a>
+      <a href="index.html#contatti">Contatti</a>
+
+      <div class="dropdown">
+        <a class="dropdown-trigger">Info ▾</a>
+        <div class="dropdown-menu">
+          <a href="chi-siamo.html">Chi Siamo</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="termini.html">Termini</a>
+          <a href="social.html">Social</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <section class="card">
+
+      <h1>FAQ</h1>
+      <p class="subtitle">Domande frequenti su tempi, materiali, processi e spedizioni.</p>
+      <div class="divider"></div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q">Quanto tempo serve per realizzare un busto personalizzato?</div>
+          <div class="faq-a">
+            Generalmente dai 7 ai 14 giorni lavorativi, in base al volto, alle revisioni
+            richieste e al periodo dell’anno. Per richieste urgenti è possibile concordare una priorità.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Di quale materiale sono fatti i busti?</div>
+          <div class="faq-a">
+            Utilizzo resina ad alta definizione con effetto marmo. Dopo la stampa, ogni pezzo
+            viene lavato, polimerizzato UV, carteggiato e rifinito a mano.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Che tipo di foto servono per il modello 3D?</div>
+          <div class="faq-a">
+            Una foto frontale ben illuminata e due foto profilo (destro e sinistro). Maggiore
+            qualità nelle foto = maggiore fedeltà del modello 3D.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Posso vedere un’anteprima prima della stampa?</div>
+          <div class="faq-a">
+            Sì. Prima della stampa definitiva invio un’anteprima 3D per una conferma finale,
+            con possibilità di richiedere piccole modifiche.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Spedisci in tutta Italia?</div>
+          <div class="faq-a">
+            Sì, spedisco ovunque in Italia con imballaggio protetto e spedizione tracciata.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Realizzi anche pezzi unici?</div>
+          <div class="faq-a">
+            Sì. Creo busti unici ispirati a icone e personaggi, oltre ai ritratti personalizzati.
+            Alcuni vengono inseriti in galleria come opere in pronta consegna.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer>
+      © ProjectX — Made in Italy · Ignis — Founder / Artist
+    </footer>
+  </div>
+</main>
+
+</body>
+</html>
